@@ -1,0 +1,18 @@
+stages:
+  process_data:
+    cmd: python process_data.py
+    deps:
+    - process_data.py
+    outs:
+    - data_processed.csv
+  train_model:
+    cmd: python train.py
+    deps:
+      - process_data.py
+      - train.py
+      - data_processed.csv
+    outs:
+      - by_region.png
+    metrics:
+      - metrics.json:
+          cache: false

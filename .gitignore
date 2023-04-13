@@ -4,3 +4,5 @@ venv/
 *.pyc
 *.pkl
 
+/data_processed.csv
+/by_region.png
